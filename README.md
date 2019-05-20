@@ -1,17 +1,48 @@
-# roboleto
-Roboleto tem o objetivo baixar anexos PDF do GMAIL de acordo com as regras definidas no arquivo 
-config/configuration.json, extrair as informações referentes ao boleto e inserir em uma planilha do google docs.
+# ROBOleto
+Roboleto tem o objetivo baixar anexos de boletos PDF do GMAIL de acordo com as regras definidas no arquivo 
+**config/configuration.json**, extrair as informações referentes ao boleto e inserir em uma planilha do google docs.
 
-Como utilizar:
-Google keys generation:
-    credentials/google-auth.json:
-        https://developers.google.com/gmail/api/quickstart/nodejs
+# Como utilizar:
+  1 - Habilitar API google:
+  https://developers.google.com/gmail/api/quickstart/nodejs
+  baixar o arquivo gerado em:
+    **credentials/google-auth.json**
 
-Google api keys management:
-https://console.developers.google.com/apis/
+  Gerenciar keys api:
+  https://console.developers.google.com/apis/
 
-Gmail Filters:
-https://support.google.com/mail/answer/7190?hl=en
+2 - Criar o arquivo de configuração:
+**config/configuration.json**
+```json
+{
+    "appConfig": {
+        "downloadPath": "tmp"
+    },
+    "googleSheet": {
+        "spreadsheetId": "",
+        "sheetName": ""
+    },
+    "gmailRules": [
+        {
+            "from": "email1@gmail.com",
+            "removeLabels": ["UNREAD"],
+            "addLabels": ["BOLETO"],
+            "maxResults": 10,
+            "query": "in:inbox is:unread filename:pdf"
+        },
+        {
+            "from": "email2@gmail.com",
+            "removeLabels": ["UNREAD"],
+            "addLabels": [],
+            "maxResults": 10,
+            "query": "in:anywhere"
+        }
+    ]
+}
+```
+
+  Gmail query filters:
+  https://support.google.com/mail/answer/7190?hl=en
 query examples:
   in:anywhere
   in:inbox
@@ -24,6 +55,13 @@ query examples:
 Gmail apis reference
 https://developers.google.com/gmail/api/v1/reference/users/messages/list
 
+
+3 - Executar o node index.js
+4 - Entrar com a key de autorização no terminar para gerar o arquivo de tokens
+
+
+
+INFO:
 
 Boleto Rules:
 47 ou 48 dígitos separados em 5 campos:
@@ -50,4 +88,3 @@ Layout Deve ser utilizado o tipo “2 de 5 intercalado”
 datas base
 1000 03/07/2000
 1000 22/02/2025
-
