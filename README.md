@@ -51,7 +51,8 @@ exemplo de arquivo:
 ## Planilha do Google
 Criar a planilha de destino das informações no google docs com as seguintes colunas:
 
-|Vencimento|Banco|Valor|Código Barras|Descrição|Arquivo|Código Barras Formatado|
+Vencimento|Banco|Valor|Código Barras|Descrição|Arquivo|Código Barras Formatado
+--- | --- | ---| ---| ---| ---| ---
 
 Copiar o ID da planilha criada para inserir no arquivo de configurações
 ![alt text](https://github.com/allandiego/roboleto/blob/master/sheet-id.png "spreadsheet id")
