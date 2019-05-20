@@ -1,0 +1,17 @@
+{
+  "name": "ROBOleto",
+  "version": "1.0.0",
+  "description": "ROBOleto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "googleapis": "^39.2.0",
+    "opn": "^5.2.0",
+    "pdf2json": "^1.1.8",
+    "readline-sync": "^1.4.9"
+  }
+}
