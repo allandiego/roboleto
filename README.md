@@ -32,7 +32,7 @@ Baixar o arquivo gerado em:
     **credentials/google-auth.json**
 
 exemplo de arquivo:
-```
+```json
 {
     "installed": {
         "client_id": "",
@@ -53,7 +53,7 @@ Criar a planilha de destino das informações no google docs com as seguintes co
 |Vencimento|Banco|Valor|Código Barras|Descrição|Arquivo|Código Barras Formatado|
 
 Copiar o ID da planilha criada para inserir no arquivo de configurações
-![alt text](https://github.com/allandiego/roboleto/sheet-id.png "spreadsheet id")
+![alt text](https://github.com/allandiego/roboleto/blob/master/sheet-id.png "spreadsheet id")
 
 
 ### Arquivo de Configuração
@@ -89,7 +89,7 @@ Criar o arquivo de configuração conforme exemplo:
 
 **Gmail query filters**:
 *  https://support.google.com/mail/answer/7190?hl=en
-*query examples:
+* query examples:
 *  in:anywhere
 *  in:inbox
 *  in:spam
