@@ -50,6 +50,7 @@ exemplo de arquivo:
 ```
 ## Planilha do Google
 Criar a planilha de destino das informações no google docs com as seguintes colunas:
+
 |Vencimento|Banco|Valor|Código Barras|Descrição|Arquivo|Código Barras Formatado|
 
 Copiar o ID da planilha criada para inserir no arquivo de configurações
@@ -100,12 +101,12 @@ Criar o arquivo de configuração conforme exemplo:
 
 **Labels**
 estas labels serão removidas da mensagem após o processamento, nesse exmplo o email e marcado como "JÁ LIDO"
-```
+```json
 "removeLabels": ["UNREAD"]
 ```
 
 estas labels serão adicionadas a mensagem após o processamento, nesse exmplo a mensagem será marcada com a label BOLETO
-```
+```json
 "addLabels": ["BOLETO"],
 ```
 
