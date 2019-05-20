@@ -1,12 +1,28 @@
 {
-  "name": "ROBOleto",
+  "name": "roboleto",
   "version": "1.0.0",
-  "description": "ROBOleto",
+  "description": "Download boletos from gmail, extract pdf info and insert into a google spreadsheet",
+  "author": "Allan Diego",
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
+    "start": "index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allandiego/roboleto.git"
+  },
+  "keywords": [
+    "nodejs",
+    "gmail api",
+    "pdf extractor",
+    "boleto"
+  ],
+  "bugs": {
+    "url": "https://github.com/allandiego/roboleto/issues"
+  },
+  "homepage": "https://github.com/allandiego/roboleto#readme",
   "dependencies": {
     "express": "^4.16.4",
     "googleapis": "^39.2.0",
