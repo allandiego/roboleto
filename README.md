@@ -8,8 +8,7 @@ Roboleto tem o objetivo baixar anexos de boletos PDF do GMAIL de acordo com as r
 Instalar NodeJS: 
 * [NodeJS](https://nodejs.org/)
 
-###Clonar o repositório
-
+### Clonar o repositório
 https://github.com/allandiego/roboleto/archive/master.zip
 
 ou
