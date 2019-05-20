@@ -1,7 +1,7 @@
 # ROBOleto
 
 Roboleto tem o objetivo baixar anexos de boletos PDF do GMAIL de acordo com as regras definidas no arquivo 
-**config/configuration.json**, extrair as informações referentes ao boleto e inserir em uma planilha do google docs.
+**config/configuration.json**, extrair as informações referentes ao boleto e inserir em uma planilha no google docs.
 
 ## Como Utilizar
 ### Instalação
@@ -17,7 +17,7 @@ git clone https://github.com/allandiego/roboleto.git
 ```
 
 ### Dependências
-De dentro da pasta do projeto instalar as depenências de pacotes
+No terminal de dentro da pasta do projeto instalar as depenências de pacotes executando o comando
 
 ```
 npm install
@@ -25,8 +25,6 @@ npm install
 
 ## Habilitar API Google
 Para habilitar a API: https://developers.google.com/gmail/api/quickstart/nodejs
-
-Para gerenciar keys api: https://console.developers.google.com/apis/
 
 Baixar o arquivo gerado em:
     **credentials/google-auth.json**
@@ -48,14 +46,25 @@ exemplo de arquivo:
     }
 }
 ```
+Para gerenciar keys api: https://console.developers.google.com/apis/
+
+
+
+
+
 ## Planilha do Google
 Criar a planilha de destino das informações no google docs com as seguintes colunas:
 
 Vencimento|Banco|Valor|Código Barras|Descrição|Arquivo|Código Barras Formatado
 --- | --- | ---| ---| ---| ---| ---
 
+
+
 Copiar o ID da planilha criada para inserir no arquivo de configurações
 ![alt text](https://github.com/allandiego/roboleto/blob/master/sheet-id.png "spreadsheet id")
+
+
+
 
 
 ### Arquivo de Configuração
@@ -88,6 +97,15 @@ Criar o arquivo de configuração conforme exemplo:
     ]
 }
 ```
+**Labels**
+estas labels serão removidas da mensagem após o processamento, nesse exmplo o email e marcado como "JÁ LIDO"
+```json
+"removeLabels": ["UNREAD"]
+```
+estas labels serão adicionadas a mensagem após o processamento, nesse exmplo a mensagem será marcada com a label BOLETO
+```json
+"addLabels": ["BOLETO"],
+```
 
 **Gmail query filters**:
 *  https://support.google.com/mail/answer/7190?hl=en
@@ -100,20 +118,9 @@ Criar o arquivo de configuração conforme exemplo:
 *  after:2004/04/16 
 *  before:2004/04/18
 
-**Labels**
-estas labels serão removidas da mensagem após o processamento, nesse exmplo o email e marcado como "JÁ LIDO"
-```json
-"removeLabels": ["UNREAD"]
-```
-
-estas labels serão adicionadas a mensagem após o processamento, nesse exmplo a mensagem será marcada com a label BOLETO
-```json
-"addLabels": ["BOLETO"],
-```
-
 
 ### Executar o robô
-De dentro da pasta do projeto executar
+No terminal de dentro da pasta do projeto executar o comando
 ```
 node index.js
 ```
