@@ -27,7 +27,7 @@ npm install
 Para habilitar a API: https://developers.google.com/gmail/api/quickstart/nodejs
 
 Baixar o arquivo gerado em:
-    **credentials/google-auth.json**
+    **credentials/credentials.json**
 
 exemplo de arquivo:
 ```json

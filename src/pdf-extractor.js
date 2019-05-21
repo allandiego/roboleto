@@ -12,10 +12,12 @@ async function robot() {
   async function getFilesListFromFolder(folderPath) {
     const pdfFiles = []
     fs.readdirSync(folderPath).forEach(file => {
-      pdfFiles.push({
-        fileName: file,
-        filePath: path.resolve(__dirname, `../${folderPath}`, file)
-      })
+      if (path.extname(file) == '.pdf') {
+        pdfFiles.push({
+          fileName: file,
+          filePath: path.resolve(__dirname, `../${folderPath}`, file)
+        })
+      }
     })
     return pdfFiles
   }

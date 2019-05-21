@@ -4,22 +4,19 @@ const readline = require('readline')
 const opn = require('opn')
 
 const SCOPES = [
-  //'https://www.googleapis.com/auth/gmail.readonly',
-  //'https://mail.google.com',
   'https://www.googleapis.com/auth/gmail.modify',
-  //'https://www.googleapis.com/auth/gmail.labels',
-  //'https://www.googleapis.com/auth/spreadsheets.readonly,'
   'https://www.googleapis.com/auth/spreadsheets'
 ]
 const TOKEN_PATH = './credentials/google-token.json'
-const KEYS_PATH = './credentials/google-auth.json'
+const KEYS_PATH = './credentials/credentials.json'
 
 async function getAuthenticatedClient() {
     return new Promise((resolve, reject) => {
       const {
         installed:{client_secret},
         installed:{client_id},
-        installed:{redirect_uris}} = JSON.parse(fs.readFileSync(KEYS_PATH, 'utf8'))
+        installed:{redirect_uris}
+      } = JSON.parse(fs.readFileSync(KEYS_PATH, 'utf8'))
       const oAuth2Client = new google.auth.OAuth2(
         client_id,
         client_secret,
@@ -48,6 +45,7 @@ async function getAuthenticatedClient() {
           rl.close()
           oAuth2Client.getToken(code).then(response => {
             oAuth2Client.setCredentials(response.tokens)
+            console.info(`> [google-auth]: Creating token file (${TOKEN_PATH})`)
             fs.writeFileSync(TOKEN_PATH, JSON.stringify(response.tokens))
             console.info('> [google-auth]: Tokens acquired.')
             resolve(oAuth2Client)
