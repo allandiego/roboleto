@@ -1,0 +1,18 @@
+{
+    "appConfig": {
+        "downloadPath": "tmp"
+    },
+    "googleSheet": {
+        "spreadsheetId": "",
+        "sheetName": ""
+    },
+    "gmailRules": [
+        {
+            "from": "",
+            "removeLabels": ["UNREAD"],
+            "addLabels": ["BOLETO"],
+            "maxResults": 10,
+            "query": "in:inbox is:unread filename:pdf"
+        }
+    ]
+}
