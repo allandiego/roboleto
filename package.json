@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/allandiego/roboleto#readme",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "googleapis": "^39.2.0",
     "opn": "^5.2.0",
     "pdf2json": "^1.1.8",
